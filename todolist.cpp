@@ -8,7 +8,7 @@ struct todolist
     int completed;
 };
 
-void addTask(vector<todolist> &tasks, const string &name)
+void addtask(vector<todolist> &tasks, const string &name)
 {
     todolist task;
     task.name = name;
@@ -16,7 +16,7 @@ void addTask(vector<todolist> &tasks, const string &name)
     tasks.push_back(task);
     cout << "Task added: " << name << endl;
 }
-void viewTask(const vector<todolist> &tasks)
+void viewtask(const vector<todolist> &tasks)
 {
     if (tasks.empty())
     {
@@ -32,7 +32,7 @@ void viewTask(const vector<todolist> &tasks)
         }
     }
 }
-void markTaskascompleted(vector<todolist> &tasks, int taskIndex)
+void marktaskascompleted(vector<todolist> &tasks, int taskIndex)
 {
     if (taskIndex >= 0 && taskIndex < tasks.size())
     {
@@ -43,7 +43,7 @@ void markTaskascompleted(vector<todolist> &tasks, int taskIndex)
         cout << "Invalid task index." << endl;
     }
 }
-void removeTask(vector<todolist> &tasks, int index)
+void removetask(vector<todolist> &tasks, int index)
 {
     if (index >= 0 && index < tasks.size())
     {
@@ -81,13 +81,13 @@ int main()
                 string name;
                 cout << "Enter the task name: ";
                 getline(cin, name);
-                addTask(tasks, name);
+                addtask(tasks, name);
 
                 char addAnother;
                 cout << "Add another task? (y/n): ";
-                cin >> addAnother;
+                cin >> addanother;
 
-                if (addAnother != 'y' && addAnother != 'Y')
+                if (addanother != 'y' && addanother != 'Y')
                 {
                     break;
                 }
@@ -97,7 +97,7 @@ int main()
         }
         case 2:
 
-            viewTask(tasks);
+            viewtask(tasks);
             break;
 
         case 3:
@@ -105,7 +105,7 @@ int main()
             int index;
             cout << "Enter the task number to mark as completed:  ";
             cin >> index;
-            markTaskascompleted(tasks, index - 1);
+            marktaskascompleted(tasks, index - 1);
             break;
         }
 
@@ -114,7 +114,7 @@ int main()
             int index;
             cout << "Enter the task number to remove:  ";
             cin >> index;
-            removeTask(tasks, index - 1);
+            removetask(tasks, index - 1);
             break;
         }
 
