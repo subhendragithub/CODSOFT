@@ -83,7 +83,7 @@ int main()
                 getline(cin, name);
                 addtask(tasks, name);
 
-                char addAnother;
+                char addanother;
                 cout << "Add another task? (y/n): ";
                 cin >> addanother;
 
